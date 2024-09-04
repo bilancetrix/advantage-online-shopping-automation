@@ -8,6 +8,6 @@ Feature: Advantage Demo
   Scenario: Atualiza imagem de um produto
     Given a request da API de atualizar um produto
     When atualizo a imagem nova cadastrada
-    Then valido que a imagem foi cadastrada com sucesso
+    Then valido que a imagem foi cadastrada com sucesso "Product was updated successful"
     And valido que o ID da imagem está presente
     And eu tenho que ver a nova imagem inserida 200

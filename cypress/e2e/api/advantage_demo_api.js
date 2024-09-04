@@ -30,9 +30,9 @@ When('atualizo a imagem nova cadastrada', () => {
     apiObject.updatePhotoViaPost()
 })
 
-Then('valido que a imagem foi cadastrada com sucesso', () => {
+Then('valido que a imagem foi cadastrada com sucesso {string}', (message) => {
     cy.get('@reason').then((reason) => {
-        apiObject.validateUploadedPhoto(reason, "Product was updated successful")
+        apiObject.validateUploadedPhoto(reason, message)
     })
 })
 
