@@ -1,20 +1,17 @@
+const searchElements = require("../locators/searchElements")
+
 class searchPage {
 
-    elements = {
-        titleItemsCount: () => cy.get('.titleItemsCount'),
-        searchedItem: () => cy.get(':nth-child(1) > :nth-child(4) > .productName')
-    }
-
     validateListReturned() {
-        this.elements.titleItemsCount().should('be.visible')
+        cy.get(searchElements.titleItemsCount).should('be.visible')
     }
 
     validateItemReturned() {
-        this.elements.searchedItem().should('be.visible')
+        cy.get(searchElements.searchedItem).should('be.visible')
     }
 
     clickItemReturned() {
-        this.elements.searchedItem().click()
+        cy.get(searchElements.searchedItem).click()
     }
 }
 

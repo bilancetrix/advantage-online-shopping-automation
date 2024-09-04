@@ -1,19 +1,15 @@
-class homePage {
+const homeElements = require('../locators/homeElements')
 
-    elements = {
-        logoHomepage: () => cy.get('.logo > a'),
-        btnSearch: () => cy.get('#search > a'),
-        textFieldSearch: () => cy.get('#autoComplete'),
-    }
+class homePage {
 
     visitHomePage() {
         cy.visit("https://advantageonlineshopping.com/");
-        this.elements.logoHomepage().should('be.visible')
+        cy.get(homeElements.logoHomepage).should('be.visible')
     }
 
     typeToSearch(product) {
-        this.elements.btnSearch().click()
-        this.elements.textFieldSearch().type(product).type('{enter}')
+        cy.get(homeElements.btnSearch).click()
+        cy.get(homeElements.textFieldSearch).type(product).type('{enter}')
     }
 }
 

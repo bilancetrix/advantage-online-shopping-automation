@@ -1,30 +1,25 @@
+const cartElements = require("../locators/cartElements")
+
 class cartPage {
 
-    elements = {
-        btnAddToCart: () => cy.get('.fixedBtn > .roboto-medium'),
-        btnGoToCart: () => cy.get('#shoppingCartLink'),
-        btnCheckoutPopup: () => cy.get('#checkOutPopUp'),
-        itemAdded: () => cy.get('a > h3.ng-binding')
-    }
-
     addingToCart() {
-        this.elements.btnAddToCart().click()
+        cy.get(cartElements.btnAddToCart).click()
     }
 
     clickGoToCart() {
-        this.elements.btnGoToCart().click()
+        cy.get(cartElements.btnGoToCart).click()
     }
 
     validateAddedToCart() {
-        this.elements.btnCheckoutPopup().should('be.visible')
+        cy.get(cartElements.btnCheckoutPopup).should('be.visible')
     }
 
     validateItemAdded() {
-        this.elements.itemAdded().should('be.visible')
+        cy.get(cartElements.itemAdded).should('be.visible')
     }
 
     clickToCheckoutPopup() {
-        this.elements.btnCheckoutPopup().click()
+        cy.get(cartElements.btnCheckoutPopup).click()
     }
 }
 
