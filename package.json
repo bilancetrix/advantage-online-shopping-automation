@@ -1,0 +1,15 @@
+{
+  "name": "Desafio Keeggo",
+  "version": "1.0.0",
+  "scripts": {
+    "cy:open": "cypress open",
+    "test": "cypress run" 
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "latest",
+    "@cypress/webpack-preprocessor": "latest",
+    "cypress": "latest",
+    "cypress-plugin-api": "^2.11.2",
+    "webpack": "latest"
+  }
+}
