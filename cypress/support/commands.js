@@ -1,5 +1,3 @@
-const accesToken = 'Bearer ${token}'
-
 Cypress.Commands.add('login', () => {
     cy.request({
         method: 'POST',

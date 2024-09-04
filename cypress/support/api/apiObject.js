@@ -62,6 +62,7 @@ class apiObject {
     expect(imageId).not.to.be.null
     expect(imageId).to.contain('custom_image_update')
   }
+  
   validateUploadedPhoto(reason, reasonUpload) {
     expect(reason).to.eq(reasonUpload)
   }

@@ -17,4 +17,3 @@ Feature: Advantage Demo
     When o usuário clica no botão 'Checkout'
     Then o sistema deve exibir a tela de pagamento com os produtos incluídos no carrinho
     And o produto 'Mice' deve aparecer na lista de produtos na tela de pagamento
-   

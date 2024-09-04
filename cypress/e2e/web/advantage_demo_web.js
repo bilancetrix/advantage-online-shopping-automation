@@ -69,3 +69,4 @@ Then("o sistema deve exibir a tela de pagamento com os produtos incluídos no ca
 Then("o produto 'Mice' deve aparecer na lista de produtos na tela de pagamento", () => {
     checkoutPage.validateProductPaymentView()
 })
+//-----------------------------------------------------------------------------------------//
