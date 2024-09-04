@@ -7,5 +7,7 @@ Feature: Advantage Demo
 
   Scenario: Atualiza imagem de um produto
     Given a request da API de atualizar um produto
-    When eu atualizo a imagem nova cadastrada
-    Then eu tenho que ver a nova imagem inserida 200
+    When atualizo a imagem nova cadastrada
+    Then valido que a imagem foi cadastrada com sucesso
+    And valido que o ID da imagem está presente
+    And eu tenho que ver a nova imagem inserida 200

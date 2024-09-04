@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "cy:open": "cypress open",
-    "test": "cypress run" 
+    "test": "cypress run"
   },
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "latest",

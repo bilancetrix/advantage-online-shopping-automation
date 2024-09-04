@@ -25,7 +25,7 @@ class apiObject {
     expect(status).to.eq(statuscode)
   }
 
-  loginToUpdatePhoto(){
+  loginToUpdatePhoto() {
     cy.login()
   }
 
@@ -43,16 +43,25 @@ class apiObject {
               'Content-Type': 'multipart/form-data',
               'Authorization': `Bearer ${token}`
             },
-          body: formData
+            body: formData
           }).then((response) => {
+            const decoder = new TextDecoder();
+            const bodyString = decoder.decode(response.body);
+            const jsonBody = JSON.parse(bodyString)
+
             cy.wrap(response.status).as('statusCode')
-            cy.wrap(response.reason).as('reason')
+            cy.wrap(jsonBody.reason).as('reason')
+            cy.wrap(jsonBody.imageId).as('imageId')
           });
         })
       })
     })
   }
 
+  validateImageId(imageId) {
+    expect(imageId).not.to.be.null
+    expect(imageId).to.contain('custom_image_update')
+  }
   validateUploadedPhoto(reason, reasonUpload) {
     expect(reason).to.eq(reasonUpload)
   }

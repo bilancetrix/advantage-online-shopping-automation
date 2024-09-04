@@ -17,7 +17,7 @@ Then('a resposta deve retornar o status code {int}', (statuscode) => {
     cy.get('@statusCode').then((status) => {
         apiObject.validateStatusCodeGET(status, statuscode)
     })
-    
+
 })
 //-----------------------------------------------------------------------------------------//
 
@@ -26,13 +26,19 @@ Given('a request da API de atualizar um produto', () => {
     apiObject.loginToUpdatePhoto()
 })
 
-When('eu atualizo a imagem nova cadastrada', () => {
+When('atualizo a imagem nova cadastrada', () => {
     apiObject.updatePhotoViaPost()
 })
 
-Then('eu valido que a imagem foi cadastrada com sucesso', () => {
+Then('valido que a imagem foi cadastrada com sucesso', () => {
     cy.get('@reason').then((reason) => {
-        apiObject.validateUploadedPhoto(reason, reasonUpload)
+        apiObject.validateUploadedPhoto(reason, "Product was updated successful")
+    })
+})
+
+Then('valido que o ID da imagem está presente', () => {
+    cy.get('@imageId').then((imageId) => {
+        apiObject.validateImageId(imageId)
     })
 })
 
