@@ -1,5 +1,5 @@
 class cartElements {
-
+    
     get btnAddToCart() {
         return '.fixedBtn > .roboto-medium';
     }
